@@ -1,0 +1,17 @@
+# geo-seo-skill
+
+> A complete GEO (Generative Engine Optimization) + SEO system as an opencode skill: 4-step rapid method, AI citation optimization, multilingual SEO, and audit scripts. Zero-dependency Python tools.
+
+## Key Information
+- [Repo overview, quick start, data, FAQ](https://github.com/everest-an/geo-seo-skill/blob/main/README.md)
+- [Main skill entry: system overview and reference index](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/SKILL.md)
+- [The 4-step rapid method (48h ranking sprint)](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/references/02-rapid-method.md)
+- [Content & citation optimization, FAST framework](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/references/03-content-citation.md)
+- [AI crawler robots.txt, llms.txt, schema, SSR](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/references/04-technical-crawl.md)
+- [E-E-A-T, entity building, brand mentions](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/references/05-authority-entities.md)
+- [10 copy-paste GEO prompts](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/references/07-prompt-library.md)
+- [Multilingual SEO: hreflang, inLanguage, og:locale](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/references/09-i18n-seo.md)
+- [GEO readiness audit (FAST + citation signals)](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/scripts/geo_audit.py)
+- [Multilingual SEO audit](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/scripts/i18n_audit.py)
+- [llms.txt generator](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/scripts/llms_txt.py)
+- [Chinese version of the skill](https://github.com/everest-an/geo-seo-skill/blob/main/中文版/SKILL.md)
