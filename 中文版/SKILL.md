@@ -1,6 +1,6 @@
 ---
 name: geo-seo
-description: 全面的 GEO（生成式引擎优化）+ SEO 体系。Use when 优化内容让 AI 搜索引擎引用/推荐、提升搜索排名、做 AI 可见性、信息增益、结构化内容、llms.txt、AI 爬虫配置、GEO 审计或监测。触发词：GEO、生成式引擎优化、Generative Engine Optimization、AEO、答案引擎优化、AI 搜索优化、AI SEO、让 AI 引用、AI Overviews 优化、ChatGPT/Perplexity/Gemini/Claude 引用、内容排名、信息增益、topical authority、llms.txt。
+description: 全面的 GEO（生成式引擎优化）+ SEO 体系。Use when 优化内容让 AI 搜索引擎引用/推荐、提升搜索排名、做 AI 可见性、信息增益、结构化内容、llms.txt、AI 爬虫配置、GEO 审计或监测、多语言/国际 SEO、hreflang、canonical、inLanguage、og:locale。触发词：GEO、生成式引擎优化、Generative Engine Optimization、AEO、答案引擎优化、AI 搜索优化、AI SEO、让 AI 引用、AI Overviews 优化、ChatGPT/Perplexity/Gemini/Claude 引用、内容排名、信息增益、topical authority、llms.txt、多语言 SEO、hreflang。
 metadata:
   version: 1.0.0
   category: marketing/seo
@@ -63,6 +63,19 @@ metadata:
 | `references/06-monitoring.md` | 指标、监测工具、GA4 AI 流量设置、监测工作流 | 追踪效果、验证是否被引用 |
 | `references/07-prompt-library.md` | 可直接复制的提示词（竞品拆解/AI重构/内容优化/GEO审计） | 需要现成 prompt 时 |
 | `references/08-tools-resources.md` | 研究论文、工具清单、案例库、参考链接 | 找工具、引用数据、看案例 |
+| `references/09-i18n-seo.md` | 多语言/国际 SEO：hreflang、locale canonical、sitemap、inLanguage、og:locale、本地化 metadata、多语言 llms.txt | 运营多语言站点（如 /en /zh-CN /ja） |
+
+## 自动化工具（Scripts）
+
+纯 Python 3 标准库、零依赖的校验脚本（位于 `scripts/`，用 `py scripts/<脚本>.py` 运行）：
+
+| 脚本 | 用途 | 用法 |
+|------|------|------|
+| `scripts/geo_audit.py` | GEO 就绪度审计 — FAST 框架、可提取性、引用信号、基础 SEO | `py scripts/geo_audit.py <文件\|目录\|URL> [--json] [--min-cjk]` |
+| `scripts/i18n_audit.py` | 多语言 SEO 审计 — hreflang（覆盖/x-default/BCP-47/双向）、canonical、sitemap 变体、inLanguage、og:locale、llms.txt | `py scripts/i18n_audit.py <目录> --base-url https://... [--sitemap 路径] [--llms-txt 路径]` |
+| `scripts/llms_txt.py` | 生成符合 llmstxt.org 规范的 `/llms.txt`（按 locale 分组） | `py scripts/llms_txt.py --name "X" --site-url https://... --summary "..." --pages "URL \| 描述" ...` |
+
+全部脚本离线可用（本地 HTML/XML 文件），传 URL 才走网络；`--json` 输出机器可读报告。
 
 ## 快速决策指南
 
@@ -71,6 +84,7 @@ metadata:
 - **"想建立长期 AI 品牌声量"** → `05-authority-entities.md` + `06-monitoring.md`。
 - **"要现成提示词"** → `07-prompt-library.md`。
 - **"要数据支撑/工具选型"** → `08-tools-resources.md`。
+- **"多语言站点（hreflang / locale URL / inLanguage）"** → `09-i18n-seo.md` + `i18n_audit.py`。
 
 ## 铁律（Anti-Patterns）
 

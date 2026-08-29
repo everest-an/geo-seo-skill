@@ -14,4 +14,5 @@
 - [GEO readiness audit (FAST + citation signals)](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/scripts/geo_audit.py)
 - [Multilingual SEO audit](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/scripts/i18n_audit.py)
 - [llms.txt generator](https://github.com/everest-an/geo-seo-skill/blob/main/.opencode/skills/geo-seo/scripts/llms_txt.py)
-- [Chinese version of the skill](https://github.com/everest-an/geo-seo-skill/blob/main/中文版/SKILL.md)
+- [中文版总览：GEO+SEO 体系、数据、FAQ](https://github.com/everest-an/geo-seo-skill/blob/main/中文版/README.md)
+- [中文版 skill 主入口](https://github.com/everest-an/geo-seo-skill/blob/main/中文版/SKILL.md)
