@@ -40,8 +40,8 @@ references/
 ├── 07-prompt-library.md        # 10 copy-paste prompts
 ├── 08-tools-resources.md       # Papers, tool ecosystem, case studies
 ├── 09-i18n-seo.md              # Multilingual SEO (hreflang, inLanguage, llms.txt i18n)
-└── 11-cn-geo-playbook.md       # China GEO: 1.37% official-site stat, ecosystem split, CN sources
-```
+├── 11-cn-geo-playbook.md       # China GEO: 1.37% official-site stat, ecosystem split, CN sources
+└── 12-engine-citation-audit.md # Why does AI not cite us? retrieval vs selection, 5-step audit```
 
 ## Quick Start
 

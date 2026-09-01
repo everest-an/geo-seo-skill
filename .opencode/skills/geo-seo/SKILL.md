@@ -71,6 +71,7 @@ A battle-tested, standardized sequence that can move a page from rank ~18 to top
 | `references/08-tools-resources.md` | Research papers, tool ecosystem, case studies, links | Tool selection, citing data, case studies |
 | `references/09-i18n-seo.md` | International/multilingual SEO: hreflang, locale canonical, sitemap, inLanguage, og:locale, localized metadata, multilingual llms.txt | Running multilingual sites (e.g., /en /zh-CN /ja) |
 | `references/11-cn-geo-playbook.md` | China GEO playbook: official sites = 1.37% of citations, platform ecosystem bifurcation, Web≠App sampling, external source priority, CN evidence grades | Doing GEO for Chinese AI search (百度/豆包/千问/元宝/Kimi/DeepSeek) |
+| `references/12-engine-citation-audit.md` | Engine citation audit: two-gate model (retrieval vs selection), 5-step audit, decision tree for "why does AI not cite us", content-ecosystem building, Doubao specifics | Diagnosing why AI cites competitors but not you; "why are we not in AI answers" |
 
 ## Automation (Scripts)
 
@@ -93,6 +94,7 @@ Every script is idempotent and offline (raw HTML/XML files) unless you pass URLs
 - **"Need data backing / tool selection"** → `08-tools-resources.md`.
 - **"Multilingual site (hreflang / locale URLs / inLanguage)"** → `09-i18n-seo.md`.
 - **"China market / Chinese AI search (百度/豆包/千问/元宝/Kimi/DeepSeek)"** → `11-cn-geo-playbook.md`.
+- **"Why does AI cite competitors but not us / why are we not in AI answers"** → `12-engine-citation-audit.md`.
 
 ## Iron Rules (Anti-Patterns)
 

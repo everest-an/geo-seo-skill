@@ -65,6 +65,7 @@ metadata:
 | `references/08-tools-resources.md` | 研究论文、工具清单、案例库、参考链接 | 找工具、引用数据、看案例 |
 | `references/09-i18n-seo.md` | 多语言/国际 SEO：hreflang、locale canonical、sitemap、inLanguage、og:locale、本地化 metadata、多语言 llms.txt | 运营多语言站点（如 /en /zh-CN /ja） |
 | `references/11-cn-geo-playbook.md` | 国内 GEO 实战：官网仅占引用 1.37%、平台生态割据、Web≠App 采样、外部信源优先级、国内证据等级 | 做国内 AI 搜索 GEO（百度/豆包/千问/元宝/Kimi/DeepSeek） |
+| `references/12-engine-citation-audit.md` | 引擎引用审计：双门槛模型（检索 vs 选择）、五步审计、诊断树「AI 为什么没引用我」、内容生态建设、豆包专项 | 诊断「AI 引用了竞品却没引用我们」；「为什么 AI 回答里没有我们」 |
 
 ## 自动化工具（Scripts）
 
@@ -87,6 +88,7 @@ metadata:
 - **"要数据支撑/工具选型"** → `08-tools-resources.md`。
 - **"多语言站点（hreflang / locale URL / inLanguage）"** → `09-i18n-seo.md` + `i18n_audit.py`。
 - **"国内市场 / 中文 AI 搜索（百度/豆包/千问/元宝/Kimi/DeepSeek）"** → `11-cn-geo-playbook.md`。
+- **"AI 引用了竞品却没引用我们 / 为什么 AI 回答里没有我们"** → `12-engine-citation-audit.md`。
 
 ## 铁律（Anti-Patterns）
 
