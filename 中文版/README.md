@@ -66,6 +66,29 @@ py scripts/llms_txt.py --name "我的品牌" --site-url https://example.com --su
 
 三个脚本均为纯 Python 3 标准库——无需 pip 安装。`--json` 输出机器可读报告。
 
+## Claude SEO 集成（`claude-seo/`）
+
+本仓库同时收录了开源 [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) 插件（MIT 协议）完整内容——**25 个子技能、18 个专家子代理、53 个执行脚本**，面向 Claude Code。可对你的站点并行执行技术/内容/Schema/GEO/本地/电商/国际 SEO 审计。
+
+```
+claude-seo/
+  CLAUDE.md                      # Claude Code 项目指令
+  skills/                        # 25 个子技能（自动发现）
+    seo/                         # 主编排技能（路由表）
+    seo-geo/                     # AI 搜索 / GEO 优化（可引用性评分）
+    seo-audit/ seo-page/ seo-technical/ seo-content/ seo-content-brief/
+    seo-schema/ seo-sitemap/ seo-images/ seo-local/ seo-maps/ seo-plan/
+    seo-flow/ seo-programmatic/ seo-competitor-pages/ seo-hreflang/
+    seo-google/ seo-backlinks/ seo-cluster/ seo-sxo/ seo-drift/
+    seo-ecommerce/ seo-dataforseo/ seo-image-gen/
+  agents/                        # 18 个专家子代理（并行扇出）
+  scripts/                       # 53 个 Python 执行脚本（GSC、GA4、CrUX、Moz 等）
+```
+
+**注意：** 与本仓库自带零依赖的 `geo_audit.py` / `i18n_audit.py` 不同，claude-seo 的脚本需要 `pip install -r claude-seo/requirements.txt`（Playwright Chromium + Google API 客户端），并按需配置 API key（GSC/GA4/Moz/DataForSEO）。技能本身是提示词驱动，无 key 也能用。
+
+上游参考：[`AgriciDaniel/claude-seo`](https://github.com/AgriciDaniel/claude-seo)（MIT）。以 `claude-seo/` 目录收录，LICENSE 原样保留。
+
 ## 如何安装为 opencode skill
 
 1. 复制（或 clone）本仓库的 `.opencode/skills/geo-seo/` 到你的项目，或在 `opencode.json` → `skills.paths` 添加路径。

@@ -66,6 +66,29 @@ py scripts/llms_txt.py --name "MyBrand" --site-url https://example.com --summary
 
 All three scripts are pure Python 3 standard library — no pip install needed. Use `--json` for machine-readable reports.
 
+## Claude SEO Integration (`claude-seo/`)
+
+This repo also vendors the full open-source [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) plugin (MIT) — **25 sub-skills, 18 specialist agents, 53 execution scripts** — for Claude Code. It runs parallel technical/content/schema/GEO/local/e-commerce/intl SEO audits against your site.
+
+```
+claude-seo/
+  CLAUDE.md                      # Project instructions for Claude Code
+  skills/                        # 25 sub-skills (auto-discovered)
+    seo/                         # Main orchestrator skill (routing table)
+    seo-geo/                     # AI search / GEO optimization (citability scoring)
+    seo-audit/ seo-page/ seo-technical/ seo-content/ seo-content-brief/
+    seo-schema/ seo-sitemap/ seo-images/ seo-local/ seo-maps/ seo-plan/
+    seo-flow/ seo-programmatic/ seo-competitor-pages/ seo-hreflang/
+    seo-google/ seo-backlinks/ seo-cluster/ seo-sxo/ seo-drift/
+    seo-ecommerce/ seo-dataforseo/ seo-image-gen/
+  agents/                        # 18 specialist subagents (parallel fan-out)
+  scripts/                       # 53 Python execution scripts (GSC, GA4, CrUX, Moz, ...)
+```
+
+**Note:** unlike this repo's own zero-dependency `geo_audit.py` / `i18n_audit.py`, the vendored claude-seo scripts require `pip install -r claude-seo/requirements.txt` (Playwright Chromium + Google API clients) and optional API keys (GSC/GA4/Moz/DataForSEO). The skills themselves are prompt-driven and work without keys.
+
+Upstream reference: [`AgriciDaniel/claude-seo`](https://github.com/AgriciDaniel/claude-seo) (MIT). Vendored under `claude-seo/` with its LICENSE intact.
+
 ## How to Install as an opencode Skill
 
 1. Copy (or clone) this repo's `.opencode/skills/geo-seo/` into your project, or add the path in `opencode.json` → `skills.paths`.
