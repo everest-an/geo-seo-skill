@@ -91,9 +91,9 @@ claude-seo/
 
 ## 如何安装为 opencode skill
 
-1. 复制（或 clone）本仓库的 `.opencode/skills/geo-seo/` 到你的项目，或在 `opencode.json` → `skills.paths` 添加路径。
+1. 本仓库已内置 `opencode.json`,在 `skills.paths` 中注册了 `.opencode/skills/`（本 GEO skill）与 `claude-seo/skills/`（收录的全部 25 个 Claude SEO 子技能）。
 2. 重启 opencode（skill 在启动时加载）。
-3. 自动触发词：GEO、生成式引擎优化、AEO、AI SEO、让 AI 引用、AI Overviews、llms.txt、hreflang、多语言 SEO、内容排名。
+3. 自动触发词：GEO、生成式引擎优化、AEO、AI SEO、让 AI 引用、AI Overviews、llms.txt、hreflang、多语言 SEO、内容排名。收录技能额外覆盖 SEO 审计、Schema、外链、本地、电商等领域。
 
 ## FAQ
 

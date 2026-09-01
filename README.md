@@ -91,9 +91,9 @@ Upstream reference: [`AgriciDaniel/claude-seo`](https://github.com/AgriciDaniel/
 
 ## How to Install as an opencode Skill
 
-1. Copy (or clone) this repo's `.opencode/skills/geo-seo/` into your project, or add the path in `opencode.json` → `skills.paths`.
+1. This repo already ships an `opencode.json` registering both `.opencode/skills/` (this GEO skill) and `claude-seo/skills/` (all 25 vendored Claude SEO sub-skills) in `skills.paths`.
 2. Restart opencode (skills load at startup).
-3. It auto-triggers on: GEO, generative engine optimization, AEO, AI SEO, get cited by AI, AI Overviews, llms.txt, hreflang, multilingual SEO, 生成式引擎优化, 多语言SEO.
+3. It auto-triggers on: GEO, generative engine optimization, AEO, AI SEO, get cited by AI, AI Overviews, llms.txt, hreflang, multilingual SEO, 生成式引擎优化, 多语言SEO. The vendored skills add SEO audit, schema, backlinks, local, e-commerce, and more.
 
 ## FAQ
 
