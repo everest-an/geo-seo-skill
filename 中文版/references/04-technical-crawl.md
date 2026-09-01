@@ -5,17 +5,24 @@
 
 ## 1. AI 爬虫访问管理（robots.txt）
 
-**关键 AI User-Agent：**
+**完整 AI 爬虫矩阵**（14 个 User-Agent，2026 年最新）：
 
-| 爬虫 | 归属 |
-|------|------|
-| GPTBot / OAI-SearchBot / ChatGPT-User | OpenAI（ChatGPT） |
-| ClaudeBot / anthropic-ai / Claude-Web | Anthropic（Claude） |
-| PerplexityBot | Perplexity |
-| Google-Extended | Google（AI 训练；AI Overviews 走 Googlebot） |
-| Applebot-Extended | Apple |
-| CCBot | Common Crawl（通用语料） |
-| Bytespider | ByteDance |
+| 爬虫 | 归属 | 用途 | 遵守 robots.txt？ |
+|------|------|------|-------------------|
+| GPTBot | OpenAI | ChatGPT 网页搜索 | 是 |
+| OAI-SearchBot | OpenAI | OpenAI 搜索功能 | 是 |
+| ChatGPT-User | OpenAI | ChatGPT 浏览（用户触发） | **否**（用户触发） |
+| ClaudeBot | Anthropic | Claude 网页功能 | 是 |
+| anthropic-ai | Anthropic | Claude 训练 | 是 |
+| PerplexityBot | Perplexity | Perplexity AI 搜索 | 是 |
+| CCBot | Common Crawl | 训练数据（常被拦截） | 是 |
+| Bytespider | ByteDance | TikTok/抖音 AI | 是 |
+| cohere-ai | Cohere | Cohere 模型 | 是 |
+| Google-Extended | Google | Gemini/Vertex 训练与 grounding 退出机制 | 是 |
+| Google-CloudVertexBot | Google | 站点主请求的 Vertex AI Agent 抓取 | 是 |
+| Google-Agent | Google | 代理式浏览（Project Mariner），替用户行动 | **否**（用户触发） |
+| Google-NotebookLM | Google | 抓取用户添加的来源 URL | **否**（用户触发） |
+| Google Messages | Google | 用户触发抓取 | **否**（用户触发） |
 
 **推荐配置（想被 AI 引用就放行）：**
 
@@ -53,9 +60,13 @@ Allow: /
 | 只拦训练爬虫（如 GPTBot） | 想被实时引用，但不想被训练 |
 | 选择性 | 按平台策略分别配置 |
 
+> **用户触发的抓取器天然无视 robots.txt**（Google-Agent、Google-NotebookLM、Google Messages、ChatGPT-User）。robots.txt 拦不住它们——需用服务端访问控制。新动向：**Web Bot Auth**（RFC 9421）让机器人通过 `Signature-Agent` 头 + 密钥目录认证（Google-Agent 已采用）；反向 DNS 验证仍是兜底手段。
+
 ## 2. llms.txt（AI 友好的站点索引）
 
-`llms.txt` 是新兴标准（类 robots.txt，见 https://llmstxt.org/），给 AI 一份结构化、机器可读的站点说明。**配置后品牌描述准确率约提升 24%**。
+`llms.txt` 是新兴标准（类 robots.txt，见 https://llmstxt.org/），给 AI 一份结构化、机器可读的站点说明。
+
+> **证据核查（2026 年更新）：** 谷歌官方 AI 优化指南明确表示谷歌搜索**忽略** `llms.txt`——对排名或 AI 可见性既无帮助也无损害。John Mueller 称其发现场景是"死胡同"；Gary Illyes 确认谷歌无支持计划。SE Ranking 30 万域名研究发现 AI 引用 Top 50 域名中**只有 1 个**有 llms.txt；OtterlyAI 服务器日志显示仅 **0.1%** 的 AI 机器人请求指向它。**但仍建议发布**：Cursor、Claude Code 等 AI 编码代理越来越多地消费它（对文档站是净收益），对非谷歌系统是零成本的选择权。绝不要把它宣传为谷歌排名或引用杠杆。
 
 - 放在站点根路径 `/llms.txt`（生产域名）。
 - 精简列出高价值稳定页面，而非堆 URL。

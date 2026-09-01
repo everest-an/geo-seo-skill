@@ -81,7 +81,7 @@ No — GEO complements SEO. AI engines pull from the same web your SEO content l
 Original data, authoritative definitions, step-by-step guides, comparison tables, and FAQ blocks. Quotes and statistics lift AI visibility 30–40%.
 
 **Does llms.txt really matter?**
-Sites with a proper `/llms.txt` see ~24% more accurate brand descriptions in AI responses. It's an emerging standard (llmstxt.org) — cheap to add, worth adding.
+It's not a Google lever: Google's own docs (2026) state Google Search ignores it, and only ~0.1% of AI-bot traffic requests it. Ship one anyway — AI coding agents (Cursor, Claude Code) consume it, and it's zero-cost optionality for non-Google systems. Just don't expect it to move rankings.
 
 **Can I run this on a multilingual site?**
 Yes — `references/09-i18n-seo.md` covers hreflang, locale-self canonicals, `inLanguage`, `og:locale`, multilingual `llms.txt`, and `i18n_audit.py` validates all of it automatically.

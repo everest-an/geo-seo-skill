@@ -59,7 +59,7 @@
 | ChatGPT 引用谷歌 21 位之后的页面 | ~90% | Semrush |
 | Reddit/YouTube/Facebook 出现在 AI Mode 结果 | 68%+ | Semrush |
 | B2B AI 搜索转化率（vs 传统） | 6–27 倍 | Backlinko 2025 |
-| 配置 llms.txt 后品牌描述准确率提升 | ~24% | llmstxt.org 生态数据 |
+| llms.txt 对谷歌排名/AI 引用的作用 | 无 —— 谷歌搜索忽略它 | 谷歌 AI 优化指南（2026） |
 | 含引用+统计页面 AI 可见性 | 高于无引用内容 30–40% | arXiv 2311.09735 |
 
 ## 6. 心智转变

@@ -81,7 +81,7 @@ py scripts/llms_txt.py --name "我的品牌" --site-url https://example.com --su
 原创数据、权威定义、步骤式指南、对比表格、FAQ 区块。引用与统计让 AI 可见性提升 30–40%。
 
 **llms.txt 真的有用吗？**
-配置了规范的 `/llms.txt` 的站点，品牌描述在 AI 回答中的准确率提升约 24%。它是新兴标准（llmstxt.org）——成本低，值得做。
+它不是谷歌杠杆：谷歌官方文档（2026）明确谷歌搜索忽略它，AI 机器人流量中也只有约 0.1% 请求该文件。但仍建议发布——Cursor、Claude Code 等 AI 编码代理会消费它，对非谷歌系统是零成本的选择权。只是别指望它拉动排名。
 
 **能在多语言站点上用吗？**
 可以——`references/09-i18n-seo.md` 覆盖 hreflang、locale-self canonical、`inLanguage`、`og:locale`、多语言 `llms.txt`，`i18n_audit.py` 可自动校验全部项目。

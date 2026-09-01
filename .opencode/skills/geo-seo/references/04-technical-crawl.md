@@ -5,17 +5,24 @@
 
 ## 1. AI Crawler Access Management (robots.txt)
 
-**Key AI user-agents:**
+**Full AI crawler matrix** (14 user-agents, current as of 2026):
 
-| Crawler | Owner |
-|---------|-------|
-| GPTBot / OAI-SearchBot / ChatGPT-User | OpenAI (ChatGPT) |
-| ClaudeBot / anthropic-ai / Claude-Web | Anthropic (Claude) |
-| PerplexityBot | Perplexity |
-| Google-Extended | Google (AI training; AI Overviews uses Googlebot) |
-| Applebot-Extended | Apple |
-| CCBot | Common Crawl |
-| Bytespider | ByteDance |
+| Crawler | Owner | Purpose | Obeys robots.txt? |
+|---------|-------|---------|-------------------|
+| GPTBot | OpenAI | ChatGPT web search | Yes |
+| OAI-SearchBot | OpenAI | OpenAI search features | Yes |
+| ChatGPT-User | OpenAI | ChatGPT browsing (user-triggered) | **No** (user-triggered) |
+| ClaudeBot | Anthropic | Claude web features | Yes |
+| anthropic-ai | Anthropic | Claude training | Yes |
+| PerplexityBot | Perplexity | Perplexity AI search | Yes |
+| CCBot | Common Crawl | Training data (often blocked) | Yes |
+| Bytespider | ByteDance | TikTok/Douyin AI | Yes |
+| cohere-ai | Cohere | Cohere models | Yes |
+| Google-Extended | Google | Gemini/Vertex training & grounding opt-out | Yes |
+| Google-CloudVertexBot | Google | Site-owner-requested Vertex AI Agent crawls | Yes |
+| Google-Agent | Google | Agentic browsing (Project Mariner), acts for a user | **No** (user-triggered) |
+| Google-NotebookLM | Google | Fetches user-added source URLs | **No** (user-triggered) |
+| Google Messages | Google | User-triggered fetch | **No** (user-triggered) |
 
 **Recommended config (allow if you want AI citations):**
 
@@ -53,11 +60,15 @@ Allow: /
 | Block training crawlers only (e.g., GPTBot) | Want real-time citations, but no training |
 | Selective | Per-platform policy |
 
+> **User-triggered fetchers ignore robots.txt by design** (Google-Agent, Google-NotebookLM, Google Messages, ChatGPT-User). robots.txt cannot block them — use server-side access controls. Emerging: **Web Bot Auth** (RFC 9421) lets bots authenticate via a `Signature-Agent` header + key directory (used by Google-Agent); reverse-DNS verification remains the fallback.
+
 > For multilingual sites: apply the same allowance to **every locale** (`/en`, `/zh-CN`, `/ja`).
 
 ## 2. llms.txt (AI-Friendly Site Index)
 
-`llms.txt` is an emerging standard (like robots.txt; see https://llmstxt.org/) that gives AI a structured, machine-readable site overview. **Brand description accuracy improves ~24%** when configured.
+`llms.txt` is an emerging standard (like robots.txt; see https://llmstxt.org/) that gives AI a structured, machine-readable site overview.
+
+> **Evidence check (updated 2026):** Google's official AI optimization guide states Google Search **ignores** `llms.txt` — it does not help or hurt rankings or AI visibility. John Mueller called the discovery use case "a dead end"; Gary Illyes confirmed Google has no support plans. SE Ranking's 300k-domain study found only **1 of the top 50 AI-cited domains** had one, and OtterlyAI server logs show only **0.1%** of AI-bot requests target it. **Ship it anyway**: AI coding agents (Cursor, Claude Code) increasingly consume it for docs sites, and it's zero-cost optionality for non-Google systems. Never present it as a Google ranking or citation lever.
 
 - Serve at the exact root `/llms.txt` on the production domain.
 - Curate a short list of high-value, stable pages — not every URL.

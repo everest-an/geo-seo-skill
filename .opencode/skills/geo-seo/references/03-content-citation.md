@@ -80,7 +80,43 @@ Make it one-line-extractable by AI:
 - [ ] Load < 2.5s
 - [ ] Clean semantic HTML
 
-## 7. Anti-Patterns
+## 7. Citability Scoring Framework (borrowed from claude-seo)
+
+> A weighted audit model — score any page 0–100 on why an AI engine would pick it.
+
+| Dimension | Weight | What to check |
+|-----------|--------|---------------|
+| **Citability** | 25% | 134–167 word self-contained answer blocks; direct answer in the first 40–60 words; specific facts/statistics; attributed claims; "X is…" definition patterns |
+| **Structural readability** | 20% | Clean H1→H2→H3 hierarchy; question-based headings; 2–4 sentence paragraphs; tables and lists; FAQ Q&A blocks |
+| **Multi-modal** | 15% | Text + images, video, charts, interactive tools; structured data for media (multi-modal content is selected **156% more often**) |
+| **Authority & brand** | 20% | Author byline + credentials; published/updated dates; primary-source citations; entity presence in Wikipedia/Wikidata; Reddit/YouTube/LinkedIn mentions |
+| **Technical accessibility** | 20% | SSR (AI crawlers don't run JS); AI-crawler allow rules in robots.txt; llms.txt presence; structured data |
+
+**Highest-leverage numbers:**
+
+- Optimal citable passage: **134–167 words**
+- **~44%** of AI citations come from the **first 30%** of the page → front-load the answer, don't bury it below the fold
+- **92%** of Google AI Overviews citations come from top-10 pages, but **47%** come from pages below position 5 → classic ranking ≠ citation selection
+- Freshness: content under 3 months old is **~3x more likely** to be cited; pages stale 6+ months lose citation eligibility → schedule refreshes
+- **Brand mentions correlate ~3x more strongly with AI visibility than backlinks** (Ahrefs study, 75k brands): YouTube mentions r≈0.737 (strongest), Reddit high, Wikipedia high, LinkedIn moderate; Domain Rating only r≈0.266
+
+## 8. Platform-Specific Citation Sources
+
+AI engines cite **different source pools** — optimize per platform:
+
+| Platform | Primary citation sources | Optimization focus |
+|----------|--------------------------|--------------------|
+| **Google AI Overviews** | Strongly ranking-correlated (cites pages that already rank) | Classic SEO + passage optimization |
+| **Google AI Mode** (Gemini 2.5-based) | Weakly ranking-correlated; ~9 domains cited per query | Freshness, entity authority, citable passages beyond position 5 |
+| **ChatGPT** | Wikipedia (47.9%), Reddit (11.3%) | Entity presence, authoritative sources |
+| **Perplexity** | Reddit (46.7%), Wikipedia | Community validation, discussion presence |
+| **Bing Copilot** | Bing index, authoritative sites | Bing SEO, IndexNow |
+
+> **Two Google citation engines, not one.** AI Mode and AI Overviews reach the same conclusion ~86% of the time but cite the same URLs only **13.7%** of the time (Ahrefs study, 540k query pairs). Treat them as separate surfaces.
+>
+> **Only 11% of domains** are cited by both ChatGPT and Google AI Overviews for the same query — don't expect one page to win everywhere.
+
+## 9. Anti-Patterns
 
 | ❌ Don't | ✅ Do |
 |----------|-------|

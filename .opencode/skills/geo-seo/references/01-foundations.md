@@ -59,7 +59,7 @@ Generative engines work via RAG (Retrieval-Augmented Generation). Empirical weig
 | ChatGPT cites pages ranked 21+ | ~90% | Semrush |
 | Reddit/YouTube/Facebook in AI Mode results | 68%+ | Semrush |
 | B2B AI search conversion (vs traditional) | 6–27x | Backlinko 2025 |
-| llms.txt improves brand description accuracy | ~24% | llmstxt.org ecosystem |
+| llms.txt effect on Google rankings/AI citations | None — Google Search ignores it | Google AI optimization guide (2026) |
 | Content w/ quotes+stats AI visibility | 30–40% higher than without | arXiv 2311.09735 |
 
 ## 6. Mindset Shift

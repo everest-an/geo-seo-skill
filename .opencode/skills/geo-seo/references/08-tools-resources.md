@@ -79,5 +79,5 @@
 | Brand mentions in non-branded answers | 26–39% |
 | ChatGPT cites pages ranked 21+ | ~90% |
 | Content with quotes/statistics visibility | +30–40% |
-| llms.txt brand accuracy improvement | ~24% |
+| llms.txt effect on Google rankings | None (ignored by Google Search) |
 | B2B AI search conversion rate | 6–27x |
