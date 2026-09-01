@@ -64,6 +64,7 @@ metadata:
 | `references/07-prompt-library.md` | 可直接复制的提示词（竞品拆解/AI重构/内容优化/GEO审计） | 需要现成 prompt 时 |
 | `references/08-tools-resources.md` | 研究论文、工具清单、案例库、参考链接 | 找工具、引用数据、看案例 |
 | `references/09-i18n-seo.md` | 多语言/国际 SEO：hreflang、locale canonical、sitemap、inLanguage、og:locale、本地化 metadata、多语言 llms.txt | 运营多语言站点（如 /en /zh-CN /ja） |
+| `references/11-cn-geo-playbook.md` | 国内 GEO 实战：官网仅占引用 1.37%、平台生态割据、Web≠App 采样、外部信源优先级、国内证据等级 | 做国内 AI 搜索 GEO（百度/豆包/千问/元宝/Kimi/DeepSeek） |
 
 ## 自动化工具（Scripts）
 
@@ -85,6 +86,7 @@ metadata:
 - **"要现成提示词"** → `07-prompt-library.md`。
 - **"要数据支撑/工具选型"** → `08-tools-resources.md`。
 - **"多语言站点（hreflang / locale URL / inLanguage）"** → `09-i18n-seo.md` + `i18n_audit.py`。
+- **"国内市场 / 中文 AI 搜索（百度/豆包/千问/元宝/Kimi/DeepSeek）"** → `11-cn-geo-playbook.md`。
 
 ## 铁律（Anti-Patterns）
 

@@ -62,6 +62,22 @@ Allow: /
 
 > **用户触发的抓取器天然无视 robots.txt**（Google-Agent、Google-NotebookLM、Google Messages、ChatGPT-User）。robots.txt 拦不住它们——需用服务端访问控制。新动向：**Web Bot Auth**（RFC 9421）让机器人通过 `Signature-Agent` 头 + 密钥目录认证（Google-Agent 已采用）；反向 DNS 验证仍是兜底手段。
 
+### robots.txt 必须按 RFC 9309 语义判，不是逐行正则
+
+逐行正则会漏三种真实封禁（GeoLook 方法层）：
+
+1. **`User-agent: * / Disallow: /` 会封掉所有没有专属组的 AI 爬虫**——最常见的"无意封禁"
+2. **多个 `User-agent` 行共享一组规则**——逐行正则会把第一个 UA 判成空规则
+3. **specificity 不看顺序**：专属组存在时通配符组整组失效——`User-agent: GPTBot / Allow: /`
+   会让 GPTBot 无视通配符组里的任何 `Disallow`
+
+**robots 放行 ≠ 真放行。** WAF/CDN（Cloudflare Bot Fight、阿里云 WAF 等）可能对 AI 爬虫 UA 单独返回 403，
+浏览器里一切正常，站长自己看不出来。用 GPTBot / ClaudeBot / PerplexityBot / Bytespider 的真实 UA
+抓一次首页做差异探测（GeoLook crawl.py 的 `ai_ua_probe`）。
+
+**llms.txt 只有指向可抓取的有效页面才有意义。** 指向 404 或被 robots 封禁的路径等于递给 AI 一份坏地图，
+抽样验证其中链接。
+
 ## 2. llms.txt（AI 友好的站点索引）
 
 `llms.txt` 是新兴标准（类 robots.txt，见 https://llmstxt.org/），给 AI 一份结构化、机器可读的站点说明。

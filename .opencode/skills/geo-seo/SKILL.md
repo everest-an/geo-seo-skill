@@ -70,6 +70,7 @@ A battle-tested, standardized sequence that can move a page from rank ~18 to top
 | `references/07-prompt-library.md` | Copy-paste prompts (gap analysis / AI restructure / content optimization / GEO audit) | Needing ready-made prompts |
 | `references/08-tools-resources.md` | Research papers, tool ecosystem, case studies, links | Tool selection, citing data, case studies |
 | `references/09-i18n-seo.md` | International/multilingual SEO: hreflang, locale canonical, sitemap, inLanguage, og:locale, localized metadata, multilingual llms.txt | Running multilingual sites (e.g., /en /zh-CN /ja) |
+| `references/11-cn-geo-playbook.md` | China GEO playbook: official sites = 1.37% of citations, platform ecosystem bifurcation, Web≠App sampling, external source priority, CN evidence grades | Doing GEO for Chinese AI search (百度/豆包/千问/元宝/Kimi/DeepSeek) |
 
 ## Automation (Scripts)
 
@@ -91,6 +92,7 @@ Every script is idempotent and offline (raw HTML/XML files) unless you pass URLs
 - **"Need ready-made prompts"** → `07-prompt-library.md`.
 - **"Need data backing / tool selection"** → `08-tools-resources.md`.
 - **"Multilingual site (hreflang / locale URLs / inLanguage)"** → `09-i18n-seo.md`.
+- **"China market / Chinese AI search (百度/豆包/千问/元宝/Kimi/DeepSeek)"** → `11-cn-geo-playbook.md`.
 
 ## Iron Rules (Anti-Patterns)
 

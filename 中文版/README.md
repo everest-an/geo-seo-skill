@@ -39,7 +39,8 @@ references/
 ├── 06-monitoring.md            # 指标、工具、GA4 AI 流量设置
 ├── 07-prompt-library.md        # 10 个可复制提示词
 ├── 08-tools-resources.md       # 论文、工具生态、案例库
-└── 09-i18n-seo.md              # 多语言 SEO（hreflang、inLanguage、llms.txt i18n）
+├── 09-i18n-seo.md              # 多语言 SEO（hreflang、inLanguage、llms.txt i18n）
+└── 11-cn-geo-playbook.md       # 国内 GEO：官网 1.37% 实证、生态割据、国内信源优先级
 ```
 
 ## 快速上手

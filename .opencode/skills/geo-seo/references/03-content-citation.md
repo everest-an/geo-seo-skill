@@ -116,6 +116,48 @@ AI engines cite **different source pools** — optimize per platform:
 >
 > **Only 11% of domains** are cited by both ChatGPT and Google AI Overviews for the same query — don't expect one page to win everywhere.
 
+## 8.5 Passage-Level Citability Judgement (from GeoLook)
+
+> The retrieval unit is the **passage**, not the page (GeoLook method layer, GEO Readiness Manual ch.0):
+> one self-contained passage that answers the question can beat a competitor's entire page;
+> conversely, a long page with no extractable passage gets passed over.
+
+**Judgement** (split by H2, a passage is "independently quotable" when):
+- Word count ≥ 60 **AND** contains at least one piece of hard information (number / definition sentence / operational step)
+
+**Failing a whole page** → `NO_QUOTABLE_PASSAGE` when: page has ≥3 sections, ≥300 words, yet zero quotable passages.
+Fix: rewrite 2–3 core sections as evidence passages — open each section by directly answering the question in its heading.
+
+**The flip side is duplication**: same question on multiple URLs / near-duplicate bodies forces retrieval to pick between
+wrong candidates, and "the wrong one" can win. Merge or canonical to a single version.
+
+## 8.6 Content Engineering: Evidence Page, Not Opinion Page
+
+For every question you target, the page must contain (data from GeoLook method layer):
+
+1. One directly-extractable definition sentence
+2. 2–5 numbers with units and sources
+3. One comparison block (table preferred)
+4. One step block
+5. Applicable + NOT-applicable scenarios ("who this isn't for" raises credibility)
+
+Skeleton:
+
+```
+Title: <the target question verbatim>
+1. What is X (one-sentence definition + expansion)
+2. Key numbers (3–5, each with source and date)
+3. X vs Y (table, same dimensions)
+4. How to (5 steps)
+5. Applicable and not-applicable scenarios
+6. FAQ (3–5)
+7. Reference sources (real clickable links)
+```
+
+> **Pure Q&A formatting gives no lift (measured −5.7%)** — format isn't the point; definitions, numbers,
+> structure and on-topicness are. FAQ's only value is query recall: use real user phrasings, answer in the first sentence.
+> (Distilled from the MIT-licensed GeoLook skill, github.com/aigclink/geolook.)
+
 ## 9. Anti-Patterns
 
 | ❌ Don't | ✅ Do |

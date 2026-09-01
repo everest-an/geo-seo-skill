@@ -64,6 +64,21 @@ Allow: /
 
 > For multilingual sites: apply the same allowance to **every locale** (`/en`, `/zh-CN`, `/ja`).
 
+### robots.txt must be judged by RFC 9309 semantics, not line-by-line regex
+
+Three real-world block types that naive per-line parsing misses (GeoLook method layer):
+
+1. **`User-agent: * / Disallow: /` blocks every AI crawler without its own group** — the most common "unintentional block"
+2. **Multiple `User-agent` lines sharing one rule set** — per-line regex misreads the first UA as an empty rule
+3. **Specificity ignores order**: when a dedicated group exists, the wildcard group is entirely void — `User-agent: GPTBot / Allow: /` makes GPTBot ignore any `Disallow` in the wildcard group
+
+**robots allowing ≠ actually allowing.** WAF/CDN (Cloudflare Bot Fight, Aliyun WAF, …) may return 403 specifically for AI
+crawler UAs while everything looks fine in a browser. Probe it: fetch the homepage with the real UAs of GPTBot / ClaudeBot /
+PerplexityBot / Bytespider and diff the responses (`ai_ua_probe` in GeoLook's crawl.py).
+
+**llms.txt only matters if it points to crawlable pages.** Links to 404s or robots-blocked paths hand AI a broken map.
+Sample-verify the links inside it.
+
 ## 2. llms.txt (AI-Friendly Site Index)
 
 `llms.txt` is an emerging standard (like robots.txt; see https://llmstxt.org/) that gives AI a structured, machine-readable site overview.

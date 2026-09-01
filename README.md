@@ -39,7 +39,8 @@ references/
 ├── 06-monitoring.md            # Metrics, tools, GA4 AI-traffic setup
 ├── 07-prompt-library.md        # 10 copy-paste prompts
 ├── 08-tools-resources.md       # Papers, tool ecosystem, case studies
-└── 09-i18n-seo.md              # Multilingual SEO (hreflang, inLanguage, llms.txt i18n)
+├── 09-i18n-seo.md              # Multilingual SEO (hreflang, inLanguage, llms.txt i18n)
+└── 11-cn-geo-playbook.md       # China GEO: 1.37% official-site stat, ecosystem split, CN sources
 ```
 
 ## Quick Start

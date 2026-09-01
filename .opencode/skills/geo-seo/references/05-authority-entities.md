@@ -76,3 +76,38 @@
 - **NerdWallet**: financial comparison content → 78% AI citation rate on personal finance queries
 - **HubSpot**: comprehensive marketing guides → preferred source for marketing topics
 - **Zapier**: integration guides → high-frequency citations for automation queries
+
+## 7. Brand Fact Card (the Knowledge Base for Everything Else)
+
+> From the GeoLook skill (MIT, github.com/aigclink/geolook). Build this first, before writing any content.
+> It is the single input that generates llms.txt, JSON-LD, definition blocks and content outlines — and the #1 cause
+> of AI "brand drift" is the official site, the fact card and the JSON-LD description disagreeing.
+
+```markdown
+## Entity
+- Canonical name: <full name>
+- Aliases / abbreviations: <all of them, incl. English name, old name, common misspellings>
+- One-sentence definition: <X is a … for …>   ← this exact sentence is what AI will extract
+- Company / founded / HQ:
+- Website:
+
+## Product & capability
+| Product | Positioning | Core capability | Who it's for |
+
+## Key numbers (each with source + verification date)
+| Fact | Value | Source | Verified | Evidence grade |
+
+## Applicable & not applicable
+- Suitable: <3, specific to people and scenarios>
+- Not suitable: <2>          ← explicit boundaries significantly raise credibility and citation rate
+
+## Forbidden phrasing
+- Don't say: <absolutist/unverified claims>
+- Say instead: <verifiable version>
+```
+
+**Evidence grades**: `A officially confirmed` / `B third-party corroborated` / `C internal, pending authorization` /
+`D needs verification` / `E prohibited`. D and E require a follow-up action — never leave them sitting.
+
+**Consistency rule**: the JSON-LD `description`, the fact card's one-sentence definition, and the homepage's above-the-fold
+definition line must match **verbatim**. Inconsistency is the top cause of AI misdescribing your brand.
